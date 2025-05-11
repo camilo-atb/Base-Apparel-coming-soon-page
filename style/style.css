@@ -1,0 +1,238 @@
+/* Variables */
+:root{
+    /*Primario*/
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    /*Neutral*/
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    /*Gradients*/
+    --linear-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --linear-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1rem; /* 16px */
+    font-family: "Josefin Sans", sans-serif; /* Weights: 300, 400, 600 */
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "img"
+    "info"
+    "footer";
+    justify-items: center; /* centra los hijos dentro de cada celda del grid */
+    background: var(--linear-1);
+}
+
+.container{
+    width: 85%;
+    max-width: 1200px;
+    /* outline: 1px solid; */
+}
+
+/* LOGO */
+.logo_page{
+    padding: 40px 0;
+    grid-area: logo;
+}
+
+.logo_img{
+    width: 120px;
+    display: block;
+    /* outline: 1px solid; */
+}
+
+/* IMAGEN */
+.imagen_page{
+    width: 100%;
+    grid-area: img; 
+    /* outline: 1px solid; */
+}
+
+.imagen_page .img_movile{
+    width: 100%;
+    /*object-fit: cover;*/ /* contain: Escala la imagen para que quepa entera dentro del contenedor, sin recortarse, manteniendo su proporción original. */
+    /*Importante: object-fit solo tiene efecto si la caja contenedora tiene dimensiones fijas (ancho y/o alto).*/
+    display: block;
+}
+
+/* INFO */
+
+.info_page{
+    padding: 100px 0 60px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    grid-area: info;
+}
+
+.title_page{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+}
+
+.title_page--pink{
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+.paragrapht_page{
+    color: var(--desaturated-red);
+    line-height: 1.5;
+}
+
+/* INFO - FORMULARIO */
+.input_correo{
+    background-color: transparent;
+    padding: 0px 20px; 
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    border: 0;
+    border: 1px solid var(--desaturated-red);
+    transition: box-shadow, 0.2s;
+}
+
+.input_correo:focus{
+    --soft-red: hsl(0, 93%, 68%);
+    outline: none;
+    border: 1px solid var(--soft-red);
+    box-shadow: 0 0 16px 3px hsla(0, 93%, 68%, 0.297);
+}
+
+.input_correo::placeholder{
+    color: var(--desaturated-red);
+}
+
+.boton_correo{
+    height: 50px;
+    padding: 0 30px;
+    background: var(--linear-2);
+    border-radius: 50px;
+    border: 0;
+    box-shadow: 0 0 10px 2px pink;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.boton_correo_img{
+    display: block;
+}
+
+.icono_error{
+    position: absolute;
+    right: 90px;
+    transform: translateY(50%);
+}
+
+.icono_error-close{
+    display: none;
+}
+
+.formulario{
+    position: relative;
+}
+
+.error_paragraph{
+    text-align: start;
+    /* outline: 1px solid; */
+    padding: 0 20px;
+    position: absolute;
+    bottom: -30px;
+    color: var(--soft-red);
+}
+
+.error_paragraph-close{
+    display: none;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.footer{
+    padding: 20px 0;
+    grid-area: footer;
+    /* outline: 1px solid; */
+    width: 85%;
+}
+
+@media (min-width: 800px) {
+    body{
+        grid-template-columns: 60% 40%;
+        /* grid-template-rows: 30% 70%; */
+        grid-template-areas: 
+        "logo img"
+        "info img"
+        "footer img";
+        grid-template-rows: auto 1fr auto; /* para que la primera fila se ajuste automáticamente al contenido, y la segunda fila ocupe todo el espacio restante */
+    }
+
+    .container{
+        width: 47%;
+        max-width: 800px;
+        /* outline: 1px solid; */
+    }
+
+    /* LOGO */
+    .logo_page{
+        padding: 60px 0 0 0;
+        align-self: start;
+    }
+
+    .logo_img{
+    width: 150px;
+    display: block;
+    /* outline: 1px solid; */
+    }
+
+    /* IMAGEN */
+    .imagen_page{
+        height: 100vh;
+        /* outline: 1px solid; */
+    }
+
+    .imagen_page .img_movile{
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
+
+    /* INFO */
+
+    .info_page{
+        text-align: start;
+        gap: 20px;
+        position: relative;
+        grid-area: info;
+        justify-content: center;
+    }
+
+    .title_page{
+        letter-spacing: 20px;
+        font-size: 3.5rem;
+    }
+
+    .attribution { 
+        text-align: start; 
+        width: 100%;
+    }
+
+    .footer{
+        width: 47%;
+    }
+}
