@@ -31,7 +31,7 @@ A continuación, muestro el resultado del proyecto en una pantalla de escritorio
 
 ### Enlaces
 
-- URL del proyecto publicado: [Ver sitio en GitHub Pages](https://your-solution-url.com)
+- URL del proyecto publicado: [Ver sitio en GitHub Pages](https://camilo-atb.github.io/Base-Apparel-coming-soon-page/)
 
 ## Mi proceso
 
